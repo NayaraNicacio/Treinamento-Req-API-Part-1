@@ -7,7 +7,7 @@ const router = express.Router();
 
 // Função para pegar dados de repositórios
 const pegarDados = () => {
-  return fetch(`https://api.github.com/users/NayaraNicacio/followers`)
+  return fetch(`https://api.github.com/users/NayaraNicacio/repos`)
     .then((res) => res.json())
     .then((repos) => {
       console.log(repos);
@@ -27,25 +27,26 @@ router.get('/:username', async (req, res) => {
       <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Olá Mundo</title>
+          <title>Bem Vindo ao Meu Repositório de Estudos</title>
           <style>
               body {
                   font-family: 'Arial', sans-serif;
-                  font-size: 18px;
+                  font-size: 15px;
                   font-weight: bold;
-                  color: #333;
+                  font-color: 'blue';
                   text-align: center;
                   margin-top: 50px;
+                  background-color: #fff55;
               }
               .repo {
-                  margin: 10px 0;
-                  backgraundcolor: "Blue"
+                  margin: 0px 0;
+                  padding: 10px;
               }
           </style>
       </head>
       <body>
-          <h1>Olá Mundo!</h1>
-          <h2>Repositórios de ${username}:</h2>
+          <h1>Bem vindo a Área de Estudos </h1>
+          <h2>Repositórios de Nayara Nicacio:</h2>
           <div>
             ${repos.map(repo => `<div class="repo">${repo.name}</div>`).join('')}
           </div>
